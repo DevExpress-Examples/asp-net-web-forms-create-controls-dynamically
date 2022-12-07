@@ -1,6 +1,6 @@
 using System;
 using System.Web.UI;
-using DevExpress.Web.ASPxEditors;
+using DevExpress.Web;
 
 public partial class LoadSingleWebControl: System.Web.UI.Page {
     protected void Page_Init(object sender, EventArgs e) {
