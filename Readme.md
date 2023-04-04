@@ -9,7 +9,7 @@
 **[[Run Online]](https://codecentral.devexpress.com/e1238/)**
 <!-- run online end -->
 
-This example shows how to create a DevExpress control or a user control dynamically at runtime.
+This example shows how to create a DevExpress control or user control dynamically at runtime.
 
 Follow the steps below to create a control in code.
 
@@ -17,7 +17,7 @@ Follow the steps below to create a control in code.
 
 1. Specify the control's `ID` property.
 1. Attach event handlers.
-1. Insert the control into the entire controls hierarchy.
+1. Insert the control into the control hierarchy.
 1. Specify the control's properties.
 1. Bind the control (for data-aware controls).
 
@@ -40,7 +40,7 @@ private void LoadUserControl(string ucName) {
 }
 ```
 
-Note once you have modified the entire controls hierarchy (for instance, added the control into the control collection), it is necessary to restore this control with the same settings during the Page_Init stage.
+Note that once you have modified the control hierarchy (for instance, added a control to the control collection), it is necessary to restore this control with the same settings during the Page_Init stage.
 
 
 ## Files to Review
