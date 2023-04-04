@@ -3,28 +3,53 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E1238)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* **[Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))**
-* [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
-* [LoadSingleWebControl.aspx](./CS/LoadSingleWebControl.aspx) (VB: [LoadSingleWebControl.aspx](./VB/LoadSingleWebControl.aspx))
-* [LoadSingleWebControl.aspx.cs](./CS/LoadSingleWebControl.aspx.cs) (VB: [LoadSingleWebControl.aspx.vb](./VB/LoadSingleWebControl.aspx.vb))
-* [LoadWebUserControl.aspx](./CS/LoadWebUserControl.aspx) (VB: [LoadWebUserControl.aspx](./VB/LoadWebUserControl.aspx))
-* [LoadWebUserControl.aspx.cs](./CS/LoadWebUserControl.aspx.cs) (VB: [LoadWebUserControl.aspx.vb](./VB/LoadWebUserControl.aspx.vb))
-* [WebUserControl.ascx](./CS/WebUserControl.ascx) (VB: [WebUserControl.ascx](./VB/WebUserControl.ascx))
-* [WebUserControl.ascx.cs](./CS/WebUserControl.ascx.cs) (VB: [WebUserControl.ascx.vb](./VB/WebUserControl.ascx.vb))
-* [WebUserControl2.ascx](./CS/WebUserControl2.ascx) (VB: [WebUserControl2.ascx](./VB/WebUserControl2.ascx))
-* [WebUserControl2.ascx.cs](./CS/WebUserControl2.ascx.cs) (VB: [WebUserControl2.ascx.vb](./VB/WebUserControl2.ascx.vb))
-<!-- default file list end -->
-# How to create controls dynamically
+# How to create ASP.NET Web Forms controls dynamically
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/e1238/)**
 <!-- run online end -->
 
+This example shows how to create a DevExpress control or a user control dynamically at runtime.
 
-<p>This is an example for the <a href="https://www.devexpress.com/Support/Center/p/KA18606">KA18606: How to create controls dynamically</a> KB Article. Please refer to the article for an explanation.</p>
+Follow the steps below to create a control in code.
 
-<br/>
+1. To create a new DevExpress control, call the control type constructor. To create a user control, call the [LoadControl](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.templatecontrol.loadcontrol) method.
 
+1. Specify the control's `ID` property.
+1. Attach event handlers.
+1. Insert the control into the entire controls hierarchy.
+1. Specify the control's properties.
+1. Bind the control (for data-aware controls).
+
+```cs
+// Creates the DevExpress ASPxButton control
+private void CreateControlProcedure(Control container) {
+    ASPxButton btn = new ASPxButton();
+    btn.ID = "btnRunTime";
+    container.Controls.Add(btn);
+    btn.Text = string.Format("This ASPxButton is created at RunTime once. ID = {0}", btn.ID);
+}
+
+// Creates a user control
+private void LoadUserControl(string ucName) {
+    Control control = LoadControl(ucName);
+    control.ID = ucName.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries)[0];
+    control.EnableViewState = false;
+    ASPxRoundPanel1.Controls.Clear();
+    ASPxRoundPanel1.Controls.Add(control);
+}
+```
+
+Note once you have modified the entire controls hierarchy (for instance, added the control into the control collection), it is necessary to restore this control with the same settings during the Page_Init stage.
+
+
+## Files to Review
+
+* [LoadSingleWebControl.aspx.cs](./CS/LoadSingleWebControl.aspx.cs#L18-L24) (VB: [LoadSingleWebControl.aspx.vb](./VB/LoadSingleWebControl.aspx.vb))
+* [LoadWebUserControl.aspx.cs](./CS/LoadWebUserControl.aspx.cs#L16-L22) (VB: [LoadWebUserControl.aspx.vb](./VB/LoadWebUserControl.aspx.vb))
+
+
+## More Examples
+
+* [Grid View for ASP.NET Web Forms - How to create the control at runtime](https://github.com/DevExpress-Examples/asp-net-web-forms-grid-create-at-runtime)
 
