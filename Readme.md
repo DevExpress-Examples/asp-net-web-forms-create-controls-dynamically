@@ -6,7 +6,7 @@
 
 # How to create ASP.NET Web Forms controls dynamically
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e1238/)**
+**[[Run Online]](https://codecentral.devexpress.com/128566398/)**
 <!-- run online end -->
 
 This example shows how to create a DevExpress control or user control dynamically at runtime.
