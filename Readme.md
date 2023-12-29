@@ -14,9 +14,6 @@
 * [WebUserControl2.ascx](./CS/WebSite/WebUserControl2.ascx) (VB: [WebUserControl2.ascx](./VB/WebSite/WebUserControl2.ascx))
 <!-- default file list end -->
 # How to create controls dynamically
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128566398/)**
-<!-- run online end -->
 
 
 <p>This is an example for the <a href="https://www.devexpress.com/Support/Center/p/KA18606">KA18606: How to create controls dynamically</a> KB Article. Please refer to the article for an explanation.</p>
