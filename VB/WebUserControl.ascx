@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl.ascx.vb"
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl.ascx.cs"
     Inherits="WebUserControl" %>
 <%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
